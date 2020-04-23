@@ -1,0 +1,52 @@
+.sign-up {
+    min-height: 87.5vh;
+    text-align: center;
+    padding-top: 100px;
+    
+    &-icon {
+        color: $clr2;
+        font-size: rem(80px);
+        margin-bottom: rem(10px);
+    }
+    h2 {
+        margin-bottom: rem(60px);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: rem(18px);
+
+        &:valid [type=text] {
+            @include input-txt($clr2, $clr2);
+        }
+        [type=text] {
+            @include input-txt($clr3, $clr2);
+            margin-bottom: rem(30px);
+        }
+        [type=text]:focus + label {
+            color: $clr2;
+        }
+        [type=text]:placeholder-shown + label {
+            top: rem(-64px);
+            left: rem(-85px);
+            opacity: 1;
+            visibility: visible;
+        }
+        label {
+            color: $clr3;
+            position: relative;
+            left: rem(-160px);
+            top: rem(40px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s linear;
+        }
+        &:valid button {
+            @include btn-anim($clr2);
+        }
+        button {
+            @include btn-anim($clr3);
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.move-list {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    z-index: 5;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid $clr4;
+    box-shadow: $shadow;
+    overflow: hidden;
+    font-size: rem(18px);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: transform .6s linear, opacity .6s linear;
+    @include for-mobile-layout {
+        left: 100px;
+        bottom: 0;
+    }
+
+    h3 {
+        padding: rem(10px) rem(20px);
+        background-color: $clr3;
+        color: $clr4;
+        font-size: inherit;
+        @include for-mobile-layout {
+            max-width: unset;
+            padding: rem(10px) rem(90px) rem(10px) rem(30px);
+        }
+
+        span {
+            max-width: 280px;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .icon {
+            margin-right: rem(10px);
+        }
+    }
+    ul {
+        padding: rem(10px) rem(20px);
+        background-color: #fff;
+        max-height: rem(600px);
+        overflow-y: auto;
+        @include for-mobile-layout {
+            padding: rem(10px) rem(90px) rem(10px) rem(30px);
+        }
+
+        li {
+            letter-spacing: rem(1px);
+            padding: rem(20px) 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($clr1, .2);
+            }
+            .__sum {
+               font-size: 1.2em;
+               
+               .money {
+                   color: green;
+                }
+                .btc {
+                    color: $clr2;
+               }
+            }
+            .__to {
+                font-weight: 600;
+                margin: 5px 0;
+            }
+            .__at {
+                font-size: .8em;
+                color: $text-muted;
+            }
+        }
+    }
+}
+.move-list-container {
+    position: relative;
+}
+.move-list-toggle {
+    display: inline-block;
+    background-color: $clr3;
+    color: $clr1;
+    font-size: 36px;
+    padding: 15px 20px;
+    border-radius: 50%;
+    transition: transform .3s linear;
+    cursor: pointer;
+    animation: tada 1s linear;
+    @include hover-supported {
+        transform: rotateZ(180deg);
+    }
+    
+    &.animate {
+        animation: tada2 1s linear;
+    }
+}
+[type=checkbox]:checked ~ .move-list {
+    transform: scale(1);
+    opacity: 1;
+}

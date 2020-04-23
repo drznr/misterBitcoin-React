@@ -1,0 +1,65 @@
+.contact-edit {
+    min-height: 82.5vh;
+    margin-top: 60px;
+    
+    &-nav {
+        @include nav-sub("Delete");
+    }
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    &-card {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: rem(20px);
+        border: 1px solid $clr4;
+        box-shadow: $shadow;
+        margin-bottom: 60px;
+        @include for-narrow-layout {
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+        }
+        
+        [alt=contact] {
+            width: 200px;
+            border: 1px solid rgba($clr3, .1);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            @include for-narrow-layout {
+                width: 300px;
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            @include for-narrow-layout {
+                justify-content: space-evenly;
+            }
+
+            input {
+                margin-bottom: rem(20px);
+                @include input-txt($clr3, $clr2);
+                @include for-narrow-layout {
+                    margin-bottom: 0;
+                }
+                &:valid {
+                    @include input-txt($clr2, $clr2);
+                }
+            }
+            &:valid button {
+                @include btn-anim($clr2);
+            }
+            button {
+                @include btn-anim($clr3);
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.contact-filter {
+    padding: rem(15px) 0;
+
+    [type=text] {
+        width: 100%;
+        @include input-txt($clr1, $clr2);
+        background-image: url('../../assets/imgs/search.svg');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 30px) center;
+        background-size: rem(30px);
+    }
+    &-btns {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 5px;
+
+        button {
+            font-size: rem(22px);
+            margin: 0 rem(5px);
+            border: 1px solid $clr3;
+            padding: 0 rem(20px);
+            border-radius: 5px;
+        }
+    }
+}

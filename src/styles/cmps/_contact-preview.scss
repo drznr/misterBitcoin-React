@@ -1,0 +1,43 @@
+.contact-preview {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: rem(20px) 0;
+    margin-bottom: 10px;
+    font-size: rem(22px);
+    font-family: bellota-bold, sans-serif;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba($clr1, .2);
+    
+    @include for-mobile-layout {
+        justify-content: space-between;
+    }
+    &-avatar {
+        height: 50px;
+    }
+    &-icon {
+        color: $clr1;
+        font-size: 1.4em;
+    }
+    &-txt {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        
+        @include for-narrow-layout {
+            flex-grow: 1;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 0;
+        }
+        &-phone {
+            font-size: .7em;
+            color: $text-muted;
+            
+            @include for-narrow-layout {
+                font-size: 1em;
+                color: inherit;
+            }
+        }
+    }
+}

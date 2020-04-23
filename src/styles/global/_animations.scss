@@ -1,0 +1,14 @@
+@keyframes tada {
+    0% {transform: scale(1);} 
+    10%, 20% {transform: scale(0.9) rotate(-5deg);} 
+    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(5deg);} 
+    40%, 60%, 80% {transform: scale(1.1) rotate(-5deg);} 
+    100% {transform: scale(1) rotate(0);} 
+} 
+@keyframes tada2 {
+    0% {transform: scale(1);} 
+    10%, 20% {transform: scale(0.9) rotate(-5deg);} 
+    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(5deg);} 
+    40%, 60%, 80% {transform: scale(1.1) rotate(-5deg);} 
+    100% {transform: scale(1) rotate(0);} 
+} 

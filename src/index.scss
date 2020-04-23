@@ -1,0 +1,29 @@
+/* Setup */
+@import './styles/setup/variables';
+@import './styles/setup/functions';
+@import './styles/setup/mixins';
+
+/* Global */
+@import './styles/global/fonts';
+@import './styles/global/animations';
+@import './styles/global/reset';
+@import './styles/global/base';
+@import './styles/global/layout';
+@import './styles/global/elements';
+
+/* Pages */
+@import './styles/pages/home';
+@import './styles/pages/statistics';
+@import './styles/pages/signup';
+@import './styles/pages/contact-details';
+@import './styles/pages/contact-edit';
+
+/* Components */
+@import './styles/cmps/main-navbar';
+@import './styles/cmps/chart';
+@import './styles/cmps/contact-filter';
+@import './styles/cmps/contact-list';
+@import './styles/cmps/contact-preview';
+@import './styles/cmps/transfer-fund';
+@import './styles/cmps/move-list';
+@import './styles/cmps/main-footer';

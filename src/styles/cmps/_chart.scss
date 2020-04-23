@@ -1,0 +1,13 @@
+.chart {
+    text-align: center;
+    font-size: 24px;
+    box-shadow: $shadow;
+    padding: 10px 0;
+
+    h3 {
+        margin-bottom: rem(40px);
+    }
+    p {
+        font-size: .75em;
+    }
+}
