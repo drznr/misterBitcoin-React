@@ -1,5 +1,6 @@
 import { httpService } from './HttpService';
 
+
 export const bitcoinService = {
     getRate,
     getMarketPrice,

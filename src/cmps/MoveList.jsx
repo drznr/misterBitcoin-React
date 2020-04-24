@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Moment from 'react-moment';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +20,7 @@ function MoveList(props) {
                 <ul>
                     {
                         props.moves.map(move => <li key={move._id}>
-                            <p className="__sum"><span className="money">${move.amount.toFixed(2)}</span> | <span className="btc">&#8383; 0.6543354</span></p>
+                            <p className="__sum"><span className="money">${move.amount.toFixed(2)}</span> | <span className="btc">&#8383; {(props.btcRate * move.amount).toFixed(6)}</span></p>
                             <p className="__to">To: {move.to}</p>
                             <p className="__at">
                                 <Moment fromNow>{move.at}</Moment> | <Moment format='DD.MM.YYYY HH:mm:ss'>{move.at}</Moment>
@@ -32,4 +33,10 @@ function MoveList(props) {
     );
 }
 
-export default MoveList;
+const mapStateToProps = (state) => {
+    return {
+      btcRate: state.user.btcRate
+    }
+}
+
+export default connect(mapStateToProps)(MoveList);
